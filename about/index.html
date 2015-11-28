@@ -26,10 +26,59 @@
     <link rel="icon" href="/img/favicon.ico">
     
     
+    <link rel="stylesheet" type="text/css" href="http://img00.zhaopin.cn/2012/css/reset.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="http://my.zhaopin.com/css/new_v5/resume_preview.css" media="all">
     <link rel="apple-touch-icon" href="/img/jacman.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
     <link rel="stylesheet" href="/css/style.css" type="text/css">
+	<script language="javascript" type="text/javascript">
+	    var _dyweq = _dyweq || [];
+	    _dyweq.push(['_setAccount', window['acc4zpAnalytics'] || 'log000001']);
+	    _dyweq.push(['_setDomainName', window['dom4zpAnalytics'] || '.zhaopin.com']);
+	    if (window['url4zpAnalytics']) _dyweq.push(['_trackPageview', url4zpAnalytics]);
+	    else _dyweq.push(['_trackPageview']);
+	    (function ()
+	    {
+	        var dywe = document.createElement('script');
+	        dywe.type = 'text/javascript'; dywe.async = true;
+	        dywe.src = 'http://img01.zhaopin.cn/2012/js/dywe.js';
+	        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(dywe, s);
+	    })();
+	    var _gaq = _gaq || [];
+	    _gaq.push(['_setAccount', window['acc4googleAnalytics'] || 'UA-7874902-2']);
+	    _gaq.push(['_setDomainName', window['dom4googleAnalytics'] || 'zhaopin.com']);
+	    _gaq.push(['_addOrganic', 'youdao', 'q']);
+	    _gaq.push(['_addOrganic', 'sogou', 'query']);
+	    _gaq.push(['_addOrganic', 'soso', 'w']);
+	    if (window['url4googleAna']) _gaq.push(['_trackPageview', url4googleAna]);
+	    else _gaq.push(['_trackPageview']);
+	    (function ()
+	    {
+	        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	        //ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+	        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	    })();
+	    function recordOutboundLink(link, category, action)
+	    {
+	        function ed(d, a) { var c = encodeURIComponent; return c instanceof Function ? (a ? encodeURI(d) : c(d)) : escape(d); }
+	        try
+	        {
+	            _dywet._getTrackerByName()._trackEvent(category, action);
+	            try
+	            {
+	                _gat._getTrackerByName()._trackEvent(category, action);
+	            } catch (err) { }
+	            if (link.target != "_blank") setTimeout('document.location = "' + link.href + '"', 100);
+	        } catch (err)
+	        {
+	            var i = new Image(1, 1);
+	            var e = document.location;
+	            i.src = "http://l.zhaopin.com/track_err.gif?dywee=5(" + category + "*" + action + ")&dywehn=" + ed(e.hostname) + "&dywep=" + ed(e.pathname + e.search, true);
+	        }
+	    }
+</script>
 </head>
 
   <body>
@@ -55,6 +104,8 @@
 					
 						<li><a href="/archives">文章</a></li>
 					
+						<li><a href="/categories">分类</a></li>
+					
 						<li><a href="/about">关于</a></li>
 					
 					<li>
@@ -73,123 +124,29 @@
       <div id="main">
 
   
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2015/11/28/hello-world/" title="Hello World" itemprop="url">
-  
-    <h1 itemprop="name">Hello World</h1>
-    
-     
-           <p itemprop="description" >Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the </p>
-        
-    
-    <time datetime="2015-11-28T08:53:45.895Z" itemprop="datePublished">2015-11-28</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2015/11/28/第三篇文章/" title="第三篇文章" itemprop="url">
-  
-    <h1 itemprop="name">第三篇文章</h1>
-    
-     
-           <p itemprop="description" >欢迎来到小帅的博客！你可以访问木蚂蚁去观看我公司的主要产品~</p>
-        
-    
-    <time datetime="2015-11-28T07:20:34.000Z" itemprop="datePublished">2015-11-28</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2015/11/28/第二篇文章/" title="第二篇文章" itemprop="url">
-  
-    <h1 itemprop="name">第二篇文章</h1>
-    
-     
-           <p itemprop="description" >欢迎来到小帅的博客！你可以访问木蚂蚁去观看我公司的主要产品~</p>
-        
-    
-    <time datetime="2015-11-28T07:17:34.000Z" itemprop="datePublished">2015-11-28</time>
-  </a>
-</section>
-
-
-
-
-
-
-
 </div>
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
-<aside class="clearfix">
-
-  
-<div class="github-card">
-<p class="asidetitle">Github 名片</p>
-<div class="github-card" data-github="w1216220482" data-width="220" data-height="119" data-theme="medium">
-<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
-</div>
-  </div>
+</footer>
 
 
-
-  
-
-  
-
-  <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
-    <ul>
-        
-          <li>
+ <div class="resumeBody">
+		<div class="summary">
+            <img src="/img/author_img.jpg" alt="" width="70" height="90" align="right" class="headerImg" />
+			<br/>
+            <h1 >帅哥中王族</h1>
             
-            	<a href="http://wdbaoge.com/" target="_blank" title="无敌小包哥">无敌小包哥</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://www.xiaoduanguoguo.com" target="_blank" title="小段果果">小段果果</a>
-            
-          </li>
-        
-    </ul>
-</div>
-
-  
-
-
-  <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
-</div>
-
-  <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
-</div>
-
-
-</aside>
-</div>
+            E-mail：<a href="mailto:eaglewebemail@gmail.com">eaglewebemail@gmail.com</a> <br />
+           
+                
+            </dd>
+			<dt style="display:none"><h5>专业技能</h5></dt>
+			<dd style="display:none">
+             
+       
+		</dl>
+	<input type="hidden" value="AppId=1&Id=651195537&Timestamp=1448724007&Callback=&signature=17b791f4e688718ae3ad167ac87ca9b0" id="neturlparam" />
     </div>
-    <footer><div id="footer" >
+
+	<footer><div id="footer" >
 	
 	<div class="line">
 		<span></span>
