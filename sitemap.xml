@@ -58,6 +58,8 @@
 <p>乳此完成之后，等待一会儿，访问你刚才的域名。如果看到了你的博客，就说明成功了，如果看到说连接错误，那就是失败了。</p>
 <p><br></p>
 <p>还存在的问题：每次写完博客提交之后，CNAME文件总是会消失；<br>暂时解决办法：每次提交时，执行完hexo g，将要执行hexo d时，把CANME文件放在public文件夹下。然后再执行hexo d。</p>
+<h2 id="博客插件安装">博客插件安装</h2><p><a href="https://hexo.io/plugins/" target="_blank" rel="external">插件库</a><br><br>安装插件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install 插件名称 --save</span><br></pre></td></tr></table></figure></p>
+<p>卸载插件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall 插件名称 --save</span><br></pre></td></tr></table></figure></p>
 ]]></content>
             </display>
         </data>
