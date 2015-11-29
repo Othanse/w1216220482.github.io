@@ -4,26 +4,13 @@
 	 
 	 
 	 <url>
-        <loc>http://github.eagleweb.xyz/2015/11/29/%E5%85%B3%E4%BA%8EGithub%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E9%85%8D%E7%BD%AE/</loc>
-        <priority>0.5</priority>
-        <data>
-            <display>
-                <title><![CDATA[关于Github博客的站内搜索配置]]></title>
-                <content></content>
-            </display>
-        </data>
-    </url>
-	
-	 
-	 <url>
         <loc>http://github.eagleweb.xyz/2015/11/29/%E5%8E%9F%E5%88%9B-%E5%85%B3%E4%BA%8E%E7%94%A8Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AE%B0%E5%BD%95/</loc>
         <priority>0.5</priority>
         <data>
             <display>
                 <title><![CDATA[[原创]关于用Github搭建个人博客的记录]]></title>
-                <content><![CDATA[<h2 id="初识">初识</h2><p>  起初是<a href="http://www.xiaoduanguoguo.com/" target="_blank" rel="external">小段果果</a>给我说的这个东西</p>
-<p><br><br>  刚开始的时候以为不是自己的空间，会有一些Github或者其他的网站的推广的一些东西，要知道那些东西是会让我有那么点不爽的存在~<br><br></p>
-<p>当然，后来事实证明我是错的==</p>
+                <content><![CDATA[<p>一些搭建博客过程中遇到的问题和技巧<br><a id="more"></a></p>
+<h2 id="初识">初识</h2><p>  起初是<a href="http://www.xiaoduanguoguo.com/" target="_blank" rel="external">小段果果</a>给我说的这个东西<br><br><br>  刚开始的时候以为不是自己的空间，会有一些Github或者其他的网站的推广的一些东西，要知道那些东西是会让我有那么点不爽的存在~<br><br><br>当然，后来事实证明我是错的==</p>
 <h2 id="开始">开始</h2><p>根据<a href="http://www.xiaoduanguoguo.com/" target="_blank" rel="external">小段果果</a>给的网站<a href="http://www.jianshu.com/p/5368aa49e193" title="使用Github建立个人博客" target="_blank" rel="external">【使用Github建立个人博客】</a>，准备开始搭建个人博客。<br><br><br>开始按照那篇文章中的步骤一步步来做。我这里只是再对那个文档进行一些补充。不会很详细的讲解每个步骤。<br></p>
 <h3 id="注册Github账号">注册Github账号</h3><p><a href="https://github.com/" target="_blank" rel="external">注册Github</a>(之前已经有了就可免去此步骤)<br></p>
 <h3 id="安装本机所需环境">安装本机所需环境<br></h3><p> 官方：<br><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a><br><br> <a href="http://git-scm.com/" target="_blank" rel="external">Git</a><br></p>
@@ -62,6 +49,21 @@
 <h3 id="hexo相关">hexo相关</h3><p><a href="http://zipperary.com/categories/hexo/" target="_blank" rel="external">hexo系列指南</a><br><br><a href="http://www.jianshu.com/p/5368aa49e193" target="_blank" rel="external">使用Github建立个人博客</a><br><br><a href="http://www.freehao123.com/hexo-node-js/" target="_blank" rel="external">Hexo免费静态博客安装和使用方法-基于Node.js高效率静态博客程序</a><br><br><br><a href="http://cnfeat.com/blog/2014/05/10/how-to-build-a-blog/" target="_blank" rel="external">如何搭建一个独立博客</a><br><br><br><a href="http://www.pchou.info/web-build/2014/07/04/build-github-blog-page-08.html" target="_blank" rel="external">一步步在Github上创建博客主页-最新版</a><br></p>
 <h3 id="博客配置相关">博客配置相关</h3><p><a href="https://hexo.io/plugins/" target="_blank" rel="external">插件库</a><br><br><br><a href="https://hexo.io/themes/" target="_blank" rel="external">主题库</a><br><br><br><a href="http://zn.baidu.com" target="_blank" rel="external">百度站内搜索</a><br><br><a href="http://tongji.baidu.com" target="_blank" rel="external">百度统计</a><br><br><a href="http://www.jiathis.com/" target="_blank" rel="external">jiathis分享</a><br><br><a href="http://duoshuo.com/" target="_blank" rel="external">多说社会化评论</a><br></p>
 <h3 id="Markdown快速入门">Markdown快速入门</h3><p><a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">Markdown快速入门</a><br></p>
+]]></content>
+            </display>
+        </data>
+    </url>
+	
+	 
+	 <url>
+        <loc>http://github.eagleweb.xyz/2015/11/28/%E5%85%B3%E4%BA%8EGithub%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E9%85%8D%E7%BD%AE/</loc>
+        <priority>0.5</priority>
+        <data>
+            <display>
+                <title><![CDATA[关于Github博客的站内搜索配置]]></title>
+                <content><![CDATA[<p>啥都不用说了！就这样吧</p>
+<p>对吧<br><a id="more"></a></p>
+<h2 id="百度">百度</h2><p>哈哈。就是酱紫玩</p>
 ]]></content>
             </display>
         </data>
