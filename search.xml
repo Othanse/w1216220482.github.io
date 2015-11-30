@@ -99,5 +99,62 @@
 	
 	
 	   
+	<url>
+        <loc>http://github.eagleweb.xyz/tags/index.html</loc>
+        <priority>0.5</priority>
+        <data>
+            <display>
+                <title><![CDATA[tags]]></title>
+                <content></content>
+            </display>
+        </data>
+    </url>
+    
+	<url>
+        <loc>http://github.eagleweb.xyz/search/index.html</loc>
+        <priority>0.5</priority>
+        <data>
+            <display>
+                <title></title>
+                <content><![CDATA[<script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=2242218381464713279' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+</script>
+
+<p><div id="bdcs-frame-box"></div></p>
+<script type="text/javascript">
+var bdcsFrameSid="2242218381464713279";
+var bdcsFrameWidth = 552;
+var bdcsFrameWt = 1;
+var bdcsFrameHt = 1;
+var bdcsFrameResultNum = 10;
+var bdcsFrameBgColor = "#ffffff";
+</script>
+<script type="text/javascript" src="http://zhannei.baidu.com/static/js/iframe.js"></script>]]></content>
+            </display>
+        </data>
+    </url>
+    
+	<url>
+        <loc>http://github.eagleweb.xyz/categories/index.html</loc>
+        <priority>0.5</priority>
+        <data>
+            <display>
+                <title><![CDATA[categories]]></title>
+                <content></content>
+            </display>
+        </data>
+    </url>
+    
+	<url>
+        <loc>http://github.eagleweb.xyz/about/index.html</loc>
+        <priority>0.5</priority>
+        <data>
+            <display>
+                <title><![CDATA[关于]]></title>
+                <content><![CDATA[<p> 这是关于</p>
+]]></content>
+            </display>
+        </data>
+    </url>
+    
   
 </urlset>
