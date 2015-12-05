@@ -9,20 +9,6 @@
     </url>
 
     <url>
-        <loc>http://github.eagleweb.xyz/tags/%E5%8D%9A%E5%AE%A2/</loc>
-        <lastmod>2015-12-05T03:28:25.612Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://github.eagleweb.xyz/tags/%E6%90%9C%E7%B4%A2/</loc>
-        <lastmod>2015-12-05T03:28:25.612Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://github.eagleweb.xyz/tags/Launcher/</loc>
         <lastmod>2015-12-05T03:46:37.670Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -39,6 +25,20 @@
     <url>
         <loc>http://github.eagleweb.xyz/tags/%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6%E5%A4%B9/</loc>
         <lastmod>2015-12-05T03:46:37.670Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://github.eagleweb.xyz/tags/%E5%8D%9A%E5%AE%A2/</loc>
+        <lastmod>2015-12-05T07:16:48.737Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://github.eagleweb.xyz/tags/%E6%90%9C%E7%B4%A2/</loc>
+        <lastmod>2015-12-05T07:16:48.737Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
