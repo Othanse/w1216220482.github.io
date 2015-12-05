@@ -4,6 +4,19 @@
 	 
 	 
 	 <url>
+        <loc>http://github.eagleweb.xyz/2015/12/05/launcher-folder-click-close-folder-faild/</loc>
+        <priority>0.5</priority>
+        <data>
+            <display>
+                <title><![CDATA[点击Launcher文件夹底部，无法关闭文件夹]]></title>
+                <content><![CDATA[<p>我们的文件夹结构比较复杂，事件分发</p>
+]]></content>
+            </display>
+        </data>
+    </url>
+	
+	 
+	 <url>
         <loc>http://github.eagleweb.xyz/2015/11/29/about-github-create-self-blog/</loc>
         <priority>0.5</priority>
         <data>
@@ -56,19 +69,6 @@
 	
 	 
 	 <url>
-        <loc>http://github.eagleweb.xyz/2015/11/28/%E5%9B%BE%E7%89%87%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95/</loc>
-        <priority>0.5</priority>
-        <data>
-            <display>
-                <title><![CDATA[图片文章测试]]></title>
-                <content><![CDATA[<p>我想尝试下</p>
-]]></content>
-            </display>
-        </data>
-    </url>
-	
-	 
-	 <url>
         <loc>http://github.eagleweb.xyz/2015/11/28/about-in-web-search/</loc>
         <priority>0.5</priority>
         <data>
@@ -77,32 +77,6 @@
                 <content><![CDATA[<p>啥都不用说了！就这样吧</p>
 <p>对吧<br><a id="more"></a></p>
 <h2 id="百度">百度</h2><p>哈哈。就是酱紫玩</p>
-]]></content>
-            </display>
-        </data>
-    </url>
-	
-	 
-	 <url>
-        <loc>http://github.eagleweb.xyz/2015/11/28/%E7%AC%AC%E4%B8%89%E7%AF%87%E6%96%87%E7%AB%A0/</loc>
-        <priority>0.5</priority>
-        <data>
-            <display>
-                <title><![CDATA[第三篇文章]]></title>
-                <content><![CDATA[<p>欢迎来到小帅的博客！<br>你可以访问<a href="http://mumayi.com" target="_blank" rel="external">木蚂蚁</a>去观看我公司的主要产品~</p>
-]]></content>
-            </display>
-        </data>
-    </url>
-	
-	 
-	 <url>
-        <loc>http://github.eagleweb.xyz/2015/11/28/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</loc>
-        <priority>0.5</priority>
-        <data>
-            <display>
-                <title><![CDATA[第二篇文章]]></title>
-                <content><![CDATA[<p>欢迎来到小帅的博客！<br>你可以访问<a href="http://mumayi.com" target="_blank" rel="external">木蚂蚁</a>去观看我公司的主要产品~</p>
 ]]></content>
             </display>
         </data>

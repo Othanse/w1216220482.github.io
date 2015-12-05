@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://github.eagleweb.xyz/2015/12/05/launcher-folder-click-close-folder-faild/</loc>
+        <lastmod>2015-12-05T03:46:37.670Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://github.eagleweb.xyz/2015/11/28/about-in-web-search/</loc>
         <lastmod>2015-12-05T03:28:25.612Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,40 +25,6 @@
     <url>
         <loc>http://github.eagleweb.xyz/2015/11/29/about-github-create-self-blog/</loc>
         <lastmod>2015-12-05T03:26:25.692Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://github.eagleweb.xyz/2015/11/28/%E5%9B%BE%E7%89%87%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95/</loc>
-        <lastmod>2015-11-30T15:03:47.686Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-        <image:image>
-            <image:loc>http://i.imgur.com/ejEWzI5.png</image:loc>
-            <image:caption><![CDATA[http://github.eagleweb.xyz]]></image:caption>
-        </image:image>
-
-        <image:image>
-            <image:loc>http://gengbiao.me/img/baidu/baidu_sitemap_data.png</image:loc>
-            <image:caption><![CDATA[http://github.eagleweb.xyz]]></image:caption>
-        </image:image>
-
-    </url>
-
-    <url>
-        <loc>http://github.eagleweb.xyz/2015/11/28/%E7%AC%AC%E4%B8%89%E7%AF%87%E6%96%87%E7%AB%A0/</loc>
-        <lastmod>2015-11-29T12:35:11.444Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://github.eagleweb.xyz/2015/11/28/%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</loc>
-        <lastmod>2015-11-29T12:35:08.543Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
