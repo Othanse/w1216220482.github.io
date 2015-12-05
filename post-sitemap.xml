@@ -7,18 +7,36 @@
     </url>
 
     <url>
-        <loc>http://github.eagleweb.xyz/2015/11/29/%E5%8E%9F%E5%88%9B-%E5%85%B3%E4%BA%8E%E7%94%A8Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AE%B0%E5%BD%95/</loc>
-        <lastmod>2015-11-30T13:22:09.495Z</lastmod>
+        <loc>http://github.eagleweb.xyz/2015/11/28/about-in-web-search/</loc>
+        <lastmod>2015-12-05T03:28:25.612Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://github.eagleweb.xyz/2015/11/28/%E5%85%B3%E4%BA%8EGithub%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E9%85%8D%E7%BD%AE/</loc>
-        <lastmod>2015-11-29T13:18:51.615Z</lastmod>
+        <loc>http://github.eagleweb.xyz/2015/11/29/about-github-create-self-blog/</loc>
+        <lastmod>2015-12-05T03:26:25.692Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://github.eagleweb.xyz/2015/11/28/%E5%9B%BE%E7%89%87%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95/</loc>
+        <lastmod>2015-11-30T15:03:47.686Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+        <image:image>
+            <image:loc>http://i.imgur.com/ejEWzI5.png</image:loc>
+            <image:caption><![CDATA[http://github.eagleweb.xyz]]></image:caption>
+        </image:image>
+
+        <image:image>
+            <image:loc>http://gengbiao.me/img/baidu/baidu_sitemap_data.png</image:loc>
+            <image:caption><![CDATA[http://github.eagleweb.xyz]]></image:caption>
+        </image:image>
 
     </url>
 

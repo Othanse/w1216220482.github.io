@@ -1,5 +1,0 @@
-http://github.eagleweb.xyz
-http://github.eagleweb.xyz/tags/index.html
-http://github.eagleweb.xyz/categories/index.html
-http://github.eagleweb.xyz/search/index.html
-http://github.eagleweb.xyz/about/index.html
