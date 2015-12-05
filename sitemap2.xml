@@ -2,13 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://github.eagleweb.xyz/2015/11/29/about-github-create-self-blog/</loc>
-    <lastmod>2015-12-05T08:59:35.269Z</lastmod>
+    <loc>http://github.eagleweb.xyz/2015/11/28/about-in-web-search/</loc>
+    <lastmod>2015-12-05T12:08:57.954Z</lastmod>
   </url>
   
   <url>
-    <loc>http://github.eagleweb.xyz/2015/11/28/about-in-web-search/</loc>
-    <lastmod>2015-12-05T07:16:48.737Z</lastmod>
+    <loc>http://github.eagleweb.xyz/about/index.html</loc>
+    <lastmod>2015-12-05T10:00:47.272Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://github.eagleweb.xyz/2015/11/29/about-github-create-self-blog/</loc>
+    <lastmod>2015-12-05T08:59:35.269Z</lastmod>
   </url>
   
   <url>
@@ -29,11 +34,6 @@
   <url>
     <loc>http://github.eagleweb.xyz/categories/index.html</loc>
     <lastmod>2015-11-30T14:23:57.703Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://github.eagleweb.xyz/about/index.html</loc>
-    <lastmod>2015-11-30T13:19:41.666Z</lastmod>
   </url>
   
 </urlset>

@@ -74,9 +74,9 @@
         <data>
             <display>
                 <title><![CDATA[关于Github博客的站内搜索配置]]></title>
-                <content><![CDATA[<p>啥都不用说了！就这样吧</p>
-<p>对吧<br><a id="more"></a></p>
-<h2 id="百度">百度</h2><p>哈哈。就是酱紫玩</p>
+                <content><![CDATA[<p>我也是第一次接触这个东西，但是隐约觉得也不是很难。所以都没百度就开始自己搞了。</p>
+<a id="more"></a>
+<h2 id="然后开始百度">然后开始百度</h2><p>哈哈。就是酱紫玩</p>
 ]]></content>
             </display>
         </data>
@@ -138,7 +138,9 @@ var bdcsFrameBgColor = "#ffffff";
         <data>
             <display>
                 <title><![CDATA[关于]]></title>
-                <content><![CDATA[<p> 这是关于</p>
+                <content><![CDATA[<p>正在进行的作品：</p>
+<p><a href="http://www.mumayi.com/android-9.html" target="_blank" rel="external">M桌面 http://www.mumayi.com/android-9.html</a><br><br></p>
+<p>个人无聊编写的小玩意：<br><br></p>
 ]]></content>
             </display>
         </data>
