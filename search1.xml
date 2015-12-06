@@ -782,6 +782,17 @@ var bdcsFrameBgColor = "#ffffff";
     </url>
     
 	<url>
+        <loc>http://github.eagleweb.xyz/googlee6fab509e0e3c496.html</loc>
+        <priority>0.5</priority>
+        <data>
+            <display>
+                <title></title>
+                <content><![CDATA[google-site-verification: googlee6fab509e0e3c496.html]]></content>
+            </display>
+        </data>
+    </url>
+    
+	<url>
         <loc>http://github.eagleweb.xyz/categories/index.html</loc>
         <priority>0.5</priority>
         <data>
