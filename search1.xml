@@ -8,15 +8,38 @@
         <priority>0.5</priority>
         <data>
             <display>
-                <title><![CDATA[Android6.0 Marshmallow(棉花糖)]]></title>
-                <content><![CDATA[<p>Android6.0 Marshmallow(棉花糖)</p>
-<p>6.0新版本包含了许多对系统功能和API的变化，<br>而我们作为开发者，也要考虑自己的程序需要做哪些兼容性的改变！</p>
-<a id="more"></a>
-<h2 id="系统功能改变：">系统功能改变：</h2><h3 id="1，Doze_and_App_Standby：">1，Doze and App Standby：</h3><p>也就是睡眠和app待机。<br>从Android6.0开始，Android提供了两种延长电池使用寿命的功能：睡眠和app待机。<br>当设备没有连接电源，进入Doze模式时，让应用程序处于待机状态以此减少电池的消耗<br>据说，在nexus5和nexus6上测试，平均续航时间提高了30%。(亲儿子数据，仅供参考)<br>系统进入睡眠状态后，会隔一段时间处理一下正在挂起任务，随着时间的推移，后面的间隔时间会越来越长，以此减少电量的消耗</p>
-<h3 id="2，Runtime_Permissions：">2，Runtime Permissions：</h3><p>也就是在程序请求要用的权限 的时候，系统会给一个弹框。提示用户，要不要给这个程序的某某权限。在6.0以前的Android系统上，<br>是在安装之前把所有应用需要的权限全部展示给看，用户决定是否要安装这个App，之后App用权限的时候不会提示用户(有些手机会提示是因为系统定制的或者第三方软件的提示)。<br>如果一个程序被静默安装了，用户不知道，也没有权限提示。那是非常不安全滴~<br>那么6.0以后，不止在用户安装的时候会提示用户，程序在运行的时候，请求某种权限之前，系统也会弹出一个对话框，让用户决定是否给XX权限给XX软件。<br>当然，如果是你不认识的App，请求某些比较隐私的权限。就可以果断卸载了。酱紫，就防止了很多app会泄露隐私了(哎。有些App的一些强盗行为拦都拦不住、不说了~)。</p>
-<h3 id="3，Boring_SSL:">3，Boring SSL:</h3><p>Boring SSL 是更安全的SSL协议，在Android6.0以前使用的是open SSL协议。 升级为 Boring SSL（心脏出血漏洞、中间人攻击等漏洞修复）</p>
-<h3 id="4，应用数据自动备份功能_-_目前是免费使用的">4，应用数据自动备份功能 - 目前是免费使用的</h3><h2 id="系统增强">系统增强</h2><h3 id="1，访问硬件标识符">1，访问硬件标识符</h3><h3 id="2，APK内容修改签名认证">2，APK内容修改签名认证</h3><h3 id="3，USB连接">3，USB连接</h3><h3 id="4，App_Links">4，App Links</h3><h2 id="API相关修改：">API相关修改：</h2><h3 id="1，Apache_HTTP_Client去除">1，Apache HTTP Client去除</h3><h3 id="2，Notifycation的变更">2，Notifycation的变更</h3><p>1，不要打扰模式（新的过滤级别）<br>2，添加新的category值CATEGORY REMINDER 用于区分category_event和category_alarm<br>3，新的Icon类<br>4，新的getActiveNotification()方法 允许你查找哪些应用的Notifications还活着</p>
-<h3 id="3，删除全局支持书签（Browser_Bookmark_Changes）_读取历史书签和写入历史书签的权限也被去掉_只能内部存储书签">3，删除全局支持书签（Browser Bookmark Changes） 读取历史书签和写入历史书签的权限也被去掉 只能内部存储书签</h3><h3 id="4，语音交互_Voice_Interactions。在应用中通过Voice_Actions构建一个语音">4，语音交互 Voice Interactions。在应用中通过Voice Actions构建一个语音</h3><h3 id="5，Adoptable_Storage_Devices(存储设备)。可以选择手机内部存储和外部SD卡存储">5，Adoptable Storage Devices(存储设备)。可以选择手机内部存储和外部SD卡存储</h3><h3 id="6，手电筒api的更新_可以直接使用getTouchMode()方法来设置">6，手电筒api的更新 可以直接使用getTouchMode()方法来设置</h3><h3 id="7，4K_Display_Mode_让高配手机得以4K呈现">7，4K Display Mode 让高配手机得以4K呈现</h3><h3 id="8，支持指纹认证">8，支持指纹认证</h3><h2 id="API增强：">API增强：</h2><h3 id="1，蓝牙笔增强">1，蓝牙笔增强</h3><h3 id="2，蓝牙扫描_减少蓝牙扫描消耗_提升系统性能">2，蓝牙扫描  减少蓝牙扫描消耗 提升系统性能</h3><h3 id="3，热点2-0支持_提供新的热点API_用于支持热点2-0">3，热点2.0支持 提供新的热点API 用于支持热点2.0</h3><h3 id="4，签名文件_Android新版本的秘钥库提供程序不再支持DSA">4，签名文件 Android新版本的秘钥库提供程序不再支持DSA</h3><h3 id="5，相机服务更新_访问共享资源的相机业务_已经从之前的先来先访问的服务方式，变为高优先级进程先访问模式">5，相机服务更新 访问共享资源的相机业务 已经从之前的先来先访问的服务方式，变为高优先级进程先访问模式</h3><h3 id="6，WIFI_网络_只能修改你自己创建的WifiConfiguration相关状态">6，WIFI 网络 只能修改你自己创建的WifiConfiguration相关状态</h3>]]></content>
+                <title><![CDATA[Android6.0 Marshmallow(棉花糖) 对开发者的影响]]></title>
+                <content><![CDATA[<p>Android6.0 Marshmallow(棉花糖)<br>官方原文：<a href="https://developer.android.com/intl/zh-cn/about/versions/marshmallow/android-6.0.html" target="_blank" rel="external">https://developer.android.com/intl/zh-cn/about/versions/marshmallow/android-6.0.html</a></p>
+<p>6.0新版本包含了许多对系统功能和API的变化，<br> 而我们作为开发者，也要考虑自己的程序需要做哪些兼容性的改变！</p>
+<p><a href="http://tech.sina.com.cn/mobile/n/n/2015-09-30/doc-ifxieyms4231929.shtml" target="_blank" rel="external">优化为主提升体验 Android 6.0亮点解析 http://tech.sina.com.cn/mobile/n/n/2015-09-30/doc-ifxieyms4231929.shtml</a><br><a id="more"></a></p>
+<h2 id="系统功能改变：">系统功能改变：</h2><h3 id="1，Doze_and_App_Standby：">1，Doze and App Standby：</h3><p> 也就是睡眠和app待机。<br> 从Android6.0开始，Android提供了两种延长电池使用寿命的功能：睡眠和app待机。<br> 当设备没有连接电源，进入Doze模式时，让应用程序处于待机状态以此减少电池的消耗<br> 据说，在nexus5和nexus6上测试，平均续航时间提高了30%。(亲儿子数据，仅供参考)<br> 系统进入睡眠状态后，会隔一段时间处理一下正在挂起任务，随着时间的推移，后面的间隔时间会越来越长，以此减少电量的消耗</p>
+<h3 id="2，Runtime_Permissions：">2，Runtime Permissions：</h3><p> 也就是在程序请求要用的权限 的时候，系统会给一个弹框。提示用户，要不要给这个程序的某某权限。在6.0以前的Android系统上，<br> 是在安装之前把所有应用需要的权限全部展示给看，用户决定是否要安装这个App，之后App用权限的时候不会提示用户(有些手机会提示是因为系统定制的或者第三方软件的提示)。<br> 如果一个程序被静默安装了，用户不知道，也没有权限提示。那是非常不安全滴~<br> 那么6.0以后，不止在用户安装的时候会提示用户，程序在运行的时候，请求某种权限之前，系统也会弹出一个对话框，让用户决定是否给XX权限给XX软件。<br> 当然，如果是你不认识的App，请求某些比较隐私的权限。就可以果断卸载了。酱紫，就防止了很多app会泄露隐私了(哎。有些App的一些强盗行为拦都拦不住、不说了~)。</p>
+<h3 id="3，Boring_SSL:">3，Boring SSL:</h3><p> Boring SSL 是更安全的SSL协议，在Android6.0以前使用的是open SSL协议。 升级为 Boring SSL（心脏出血漏洞、中间人攻击等漏洞修复）</p>
+<h3 id="4，应用数据自动备份功能">4，应用数据自动备份功能</h3><p>（不过，听说是基于 Google 账号的自动备份~）</p>
+<h2 id="系统增强">系统增强</h2><h3 id="1，访问硬件标识符">1，访问硬件标识符</h3><h3 id="2，APK内容修改签名认证">2，APK内容修改签名认证</h3><h3 id="3，USB连接">3，USB连接</h3><h3 id="4，App_Links">4，App Links</h3><h2 id="重点：API相关修改：">重点：API相关修改：</h2><h3 id="1，Apache_HTTP_Client去除">1，Apache HTTP Client去除</h3><p> HttpClient在6.0中已经去掉了，如果要继续使用HttpClient。并且还想支持6.0的用户的话，就只能添加HttpClient的支持库了。<br> Eclipse的话在libs中加入<br> org.apache.http.legacy.jar<br> 上面的jar包在：**\android-sdk-windows\platforms\android-23\optional下（需要下载android 6.0的SDK），</p>
+<p>AndroidStudio的话就容易多了。在Gradle中添加一句话就解决：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">useLibrary</span> <span class="string">'org.apache.http.legacy'</span></span><br></pre></td></tr></table></figure>
+<h3 id="2，Notifycation的变更">2，Notifycation的变更</h3><p> 1，不要打扰模式（新的INTERRUPTION_FILTER_ALARMS过滤级别）<br> 2，添加新的category值CATEGORY REMINDER 用于区分CATEGORY_EVENT和CATEGORY_ALARM<br> 3，新的Icon类，你可以通过setSmallIcon() 和setLargeIcon() 修改Notifacations图标，同样的addAction() 方法现在接收一个Icon对象，不再是一个资源文件了。<br> 4，新的getActiveNotification()方法 允许你查找哪些应用的Notifications还活着</p>
+<h3 id="3，删除全局支持书签（Browser_Bookmark_Changes）">3，删除全局支持书签（Browser Bookmark Changes）</h3><p> 读取历史书签和写入历史书签的权限也被去掉 只能内部存储书签<br>android.provider.Browser.getAllBookmarks() 和android.provider.Browser.saveBookmark()方法现在除去。同样，READ_HISTORY_BOOKMARKS和WRITE_HISTORY_BOOKMARKS权限被除去。如果您的应用目标的Android 6.0（API级别23）或更高，没有从全局供应商访问书签或使用书签的权限。相反，您的应用程序应该在内部存储书签数据。</p>
+<h3 id="4，Voice_Interactions(语音交互)">4，Voice Interactions(语音交互)</h3><p>在应用中通过Voice Actions构建一个语音<br><a href="https://developer.android.com/intl/zh-cn/reference/android/app/VoiceInteractor.html" target="_blank" rel="external">VoiceInteractor</a></p>
+<h3 id="5，Adoptable_Storage_Devices(存储设备)">5，Adoptable Storage Devices(存储设备)</h3><p>可以选择手机内部存储和外部SD卡存储</p>
+<h3 id="6，手电筒">6，手电筒</h3><p>api的更新 可以直接使用setTouchMode()方法来开启或者关闭手电筒</p>
+<h3 id="7，4K_Display_Mode">7，4K Display Mode</h3><p> 让高配手机得以4K呈现</p>
+<h3 id="8，支持指纹认证">8，支持指纹认证</h3><p>提供原生指纹识别API <a href="https://developer.android.com/intl/zh-cn/reference/android/hardware/fingerprint/FingerprintManager.html" target="_blank" rel="external">FingerprintManager</a></p>
+<p>当然少不了权限：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission</span><br><span class="line">android:<span class="property">name</span>=<span class="string">"android.permission.USE_FINGERPRINT"</span> /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>(还可以用模拟器模拟的哟，官方文档有介绍)</p>
+<h2 id="API增强：">API增强：</h2><h3 id="1，蓝牙笔增强">1，蓝牙笔增强</h3><h3 id="2，蓝牙">2，蓝牙</h3><p>扫描  减少蓝牙扫描消耗 提升系统性能</p>
+<h3 id="3，热点2-0支持">3，热点2.0支持</h3><p> 提供新的热点API 用于支持热点2.0 </p>
+<h3 id="4，签名文件">4，签名文件</h3><p> Android新版本的秘钥库提供程序不再支持DSA</p>
+<h3 id="5，相机服务更新">5，相机服务更新</h3><p> 访问共享资源的相机业务 已经从之前的先来先访问的服务方式，变为高优先级进程先访问模式</p>
+<h3 id="6，WIFI_网络">6，WIFI 网络</h3><p> 只能修改你自己创建的WifiConfiguration相关状态</p>
+<hr>
+<pre><code>我感觉对开发者影响总的来说不是很多，就一个HttpClient的去除可能影响较大，其他的相对较少吧~
+
+原生支持指纹和语音的这个东西，这个感觉好处是有滴，但是有限。
+
+其他的就只能算是优化了
+</code></pre>]]></content>
             </display>
         </data>
     </url>
