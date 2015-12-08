@@ -7,6 +7,13 @@
     </url>
     
     <url>
+        <loc>http://github.eagleweb.xyz/about/index.html</loc>
+        <lastmod>2015-12-08T13:57:57.800Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>http://github.eagleweb.xyz/search/index.html</loc>
         <lastmod>2015-12-06T12:19:02.803Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -23,13 +30,6 @@
     <url>
         <loc>http://github.eagleweb.xyz/404.html</loc>
         <lastmod>2015-12-06T08:24:46.242Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>http://github.eagleweb.xyz/about/index.html</loc>
-        <lastmod>2015-12-05T10:00:47.272Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
