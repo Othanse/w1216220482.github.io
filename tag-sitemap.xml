@@ -2,13 +2,6 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://github.eagleweb.xyz/tags/Android/</loc>
-        <lastmod>2015-12-06T05:02:25.113Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://github.eagleweb.xyz/tags/Gradle/</loc>
         <lastmod>2015-12-06T05:02:25.113Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -81,6 +74,20 @@
     <url>
         <loc>http://github.eagleweb.xyz/tags/API%E5%8F%98%E5%8C%96/</loc>
         <lastmod>2015-12-08T14:08:19.111Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://github.eagleweb.xyz/tags/so/</loc>
+        <lastmod>2015-12-10T15:05:12.155Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://github.eagleweb.xyz/tags/Android/</loc>
+        <lastmod>2015-12-10T15:05:12.155Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

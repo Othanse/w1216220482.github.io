@@ -4,6 +4,61 @@
 	 
 	 
 	 <url>
+        <loc>http://github.eagleweb.xyz/2015/12/10/%E8%BD%AC-%E4%BD%A0%E5%BA%94%E8%AF%A5%E5%85%B3%E6%B3%A8%E7%9A%84-so%E6%96%87%E4%BB%B6/</loc>
+        <priority>0.5</priority>
+        <data>
+            <display>
+                <title><![CDATA[[转]你应该关注的.so文件]]></title>
+                <content><![CDATA[<p><a href="http://ph0b.com/android-abis-and-so-files/" target="_blank" rel="external"><strong>原文链接</strong></a></p>
+<p>早期的Android系统几乎只支持ARMv5的CPU架构，你知道现在它支持多少种吗？7种！</p>
+<p>Android系统目前支持以下七种不同的CPU架构：ARMv5，ARMv7 (从2010年起)，x86 (从2011年起)，MIPS (从2012年起)，ARMv8，MIPS64和x86_64 (从2014年起)，每一种都关联着一个相应的ABI。</p>
+<a id="more"></a>
+<p>应用程序二进制接口（Application Binary Interface）定义了二进制文件（尤其是.so文件）如何运行在相应的系统平台上，从使用的指令集，内存对齐到可用的系统函数库。在Android 系统上，每一个CPU架构对应一个ABI：armeabi，armeabi-v7a，x86，mips，arm64- v8a，mips64，x86_64。</p>
+<div style="padding: 0px; margin: 0px; line-height: 25.2000007629395px; color: rgb(64, 64, 64); font-family: 'Microsoft YaHei', Verdana, sans-serif, SimSun; font-size: 14px; widows: 1; text-align: right; background-color: rgb(250, 250, 250);"><a name="_label0" style="padding: 0px; margin: 0px; color: rgb(34, 116, 155);"></a></div>
+
+<h3 id="为什么你需要重点关注-so文件">为什么你需要重点关注.so文件</h3><p>如果项目中使用到了NDK，它将会生成.so文件，因此显然你已经在关注它了。如果只是使用Java语言进行编码，你可能在想不需要关注.so文 件了吧，因为Java是跨平台的。但事实上，即使你在项目中只是使用Java语言，很多情况下，你可能并没有意识到项目中依赖的函数库或者引擎库里面已经 嵌入了.so文件，并依赖于不同的ABI。</p>
+<p>例如，项目中使用RenderScript支持库，OpenCV，Unity，android-gif-drawable，SQLCipher等，你都已经在生成的APK文件中包含.so文件了，而你需要关注.so文件。</p>
+<p>Android应用支持的ABI取决于APK中位于lib/ABI目录中的.so文件，其中ABI可能是上面说过的七种ABI中的一种。</p>
+<p><img src="http://i.imgur.com/mS2Zzpo.png" alt="关于Android的.so文件你所需要知道的"></p>
+<p><a href="https://play.google.com/store/apps/details?id=com.xh.nativelibsmonitor.app" target="_blank" rel="external">Native Libs Monitor</a>&nbsp;这个应用可以帮助我们理解手机上安装的APK用到了哪些.so文件，以及.so文件来源于哪些函数库或者框架。</p>
+<div style="padding: 0px; margin: 0px; line-height: 25.2000007629395px; color: rgb(64, 64, 64); font-family: 'Microsoft YaHei', Verdana, sans-serif, SimSun; font-size: 14px; widows: 1; background-color: rgb(250, 250, 250);"><br><br>当然，我们也可以自己对app反编译来获取这些信息，不过相对麻烦一些。<br></div>
+
+<p>很多设备都支持多于一种的ABI。例如ARM64和x86设备也可以同时运行armeabi-v7a和armeabi的二进制包。但最好是针对特 定平台提供相应平台的二进制包，这种情况下运行时就少了一个模拟层（例如x86设备上模拟arm的虚拟层），从而得到更好的性能（归功于最近的架构更新， 例如硬件fpu，更多的寄存器，更好的向量化等）。</p>
+<p>我们可以通过Build.SUPPORTED_ABIS得到根据偏好排序的设备支持的ABI列表。但你不应该从你的应用程序中读取它，因为 Android包管理器安装APK时，会自动选择APK包中为对应系统ABI预编译好的.so文件，如果在对应的lib／ABI目录中存在.so文件的 话。</p>
+<h3 id="App中可能出错的地方">App中可能出错的地方</h3><p>处理.so文件时有一条简单却并不知名的重要法则。</p>
+<p>你应该尽可能的提供专为每个ABI优化过的.so文件，但要么全部支持，要么都不支持：你不应该混合着使用。你应该为每个ABI目录提供对应的.so文件。</p>
+<p>当一个应用安装在设备上，只有该设备支持的CPU架构对应的.so文件会被安装。在x86设备上，libs/x86目录中如果存在.so文件的 话，会被安装，如果不存在，则会选择armeabi-v7a中的.so文件，如果也不存在，则选择armeabi目录中的.so文件（因为x86设备也支 持armeabi-v7a和armeabi）。</p>
+<h3 id="其他地方也可能出错">其他地方也可能出错</h3><p>当你引入一个.so文件时，不止影响到CPU架构。我从其他开发者那里可以看到一系列常见的错误，其中最多的是”UnsatisfiedLinkError”，”dlopen: failed”以及其他类型的crash或者低下的性能：</p>
+<h4 id="使用android-21平台版本编译的-so文件运行在android-15的设备上">使用android-21平台版本编译的.so文件运行在android-15的设备上</h4><p>使用NDK时，你可能会倾向于使用最新的编译平台，但事实上这是错误的，因为NDK平台不是后向兼容的，而是前向兼容的。推荐使用app的minSdkVersion对应的编译平台。</p>
+<p>这也意味着当你引入一个预编译好的.so文件时，你需要检查它被编译所用的平台版本。</p>
+<h4 id="混合使用不同C++运行时编译的-so文件">混合使用不同C++运行时编译的.so文件</h4><p>.so文件可以依赖于不同的C++运行时，静态编译或者动态加载。混合使用不同版本的C++运行时可能导致很多奇怪的crash，是应该避免的。 作为一个经验法则，当只有一个.so文件时，静态编译C++运行时是没问题的，否则当存在多个.so文件时，应该让所有的.so文件都动态链接相同的 C++运行时。</p>
+<p>这意味着当引入一个新的预编译.so文件，而且项目中还存在其他的.so文件时，我们需要首先确认新引入的.so文件使用的C++运行时是否和已经存在的.so文件一致。</p>
+<h4 id="没有为每个支持的CPU架构提供对应的-so文件">没有为每个支持的CPU架构提供对应的.so文件</h4><p>这一点在前文已经说到了，但你应该真的特别注意它，因为它可能发生在根本没有意识到的情况下。</p>
+<p>例如：你的app支持armeabi-v7a和x86架构，然后使用Android Studio新增了一个函数库依赖，这个函数库包含.so文件并支持更多的CPU架构，例如新增android-gif-drawable函数库：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">compile</span> ‘<span class="tag">pl</span><span class="class">.droidsonroids</span><span class="class">.gif</span><span class="pseudo">:android-gif-drawable</span><span class="pseudo">:1</span><span class="class">.1</span>.+’</span><br></pre></td></tr></table></figure></p>
+<p>发布我们的app后，会发现它在某些设备上会发生Crash，例如Galaxy S6，最终可以发现只有64位目录下的.so文件被安装进手机。</p>
+<p>解决方案：重新编译我们的.so文件使其支持缺失的ABIs，或者设置<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">ndk</span><span class="class">.abiFilters</span></span><br></pre></td></tr></table></figure></p>
+<p>显示指定支持的ABIs。</p>
+<p>最后一点：&nbsp;如果你是一个SDK提供者，但提供的函数库不支持所有的ABIs，那你将会搞砸你的用户，因为他们能支持的ABIs必将只能少于你提供的。</p>
+<h4 id="将-so文件放在错误的地方">将.so文件放在错误的地方</h4><p>我们往往很容易对.so文件应该放在或者生成到哪里感到困惑，下面是一个总结：</p>
+<ul>
+<li>Android Studio工程放在jniLibs/ABI目录中（当然也可以通过在build.gradle文件中的设置jniLibs.srcDir属性自己指定）</li>
+<li>Eclipse工程放在libs/ABI目录中（这也是ndk-build命令默认生成.so文件的目录）</li>
+<li>AAR压缩包中位于jni/ABI目录中（.so文件会自动包含到引用AAR压缩包的APK中）</li>
+<li>最终APK文件中的lib/ABI目录中</li>
+<li>通过PackageManager安装后，在小于Android 5.0的系统中，.so文件位于app的nativeLibraryPath目录中；在大于等于Android 5.0的系统中，.so文件位于app的nativeLibraryRootDir/CPU_ARCH目录中。</li>
+</ul>
+<h4 id="只提供armeabi架构的-so文件而忽略其他ABIs的">只提供armeabi架构的.so文件而忽略其他ABIs的</h4><p>所有的x86/x86_64/armeabi-v7a/arm64-v8a设备都支持armeabi架构的.so文件，因此似乎移除其他ABIs的.so文件是一个减少APK大小的好技巧。但事实上并不是：这不只影响到函数库的性能和兼容性。</p>
+<p>x86设备能够很好的运行ARM类型函数库，但并不保证100%不发生crash，特别是对旧设备。64位设备（arm64-v8a, x86_64, mips64）能够运行32位的函数库，但是以32位模式运行，在64位平台上运行32位版本的ART和Android组件，将丢失专为64位优化过的性 能（ART，webview，media等等）。</p>
+<p>以减少APK包大小为由是一个错误的借口，因为你也可以选择在应用市场上传指定ABI版本的APK，生成不同ABI版本的APK可以在build.gradle中如下配置：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">   ...</span><br><span class="line">   splits &#123;</span><br><span class="line">     abi &#123;</span><br><span class="line">       enable <span class="keyword">true</span></span><br><span class="line">       reset()</span><br><span class="line">       <span class="keyword">include</span> <span class="string">'x86'</span>, <span class="string">'x86_64'</span>, <span class="string">'armeabi-v7a'</span>, <span class="string">'arm64-v8a'</span> <span class="comment">//select ABIs to build APKs for</span></span><br><span class="line">       universalApk <span class="keyword">true</span> <span class="comment">//generate an additional APK that contains all the ABIs</span></span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// map for the version code</span></span><br><span class="line">   <span class="keyword">project</span>.ext.versionCodes = [<span class="string">'armeabi'</span>: <span class="number">1</span>, <span class="string">'armeabi-v7a'</span>: <span class="number">2</span>, <span class="string">'arm64-v8a'</span>: <span class="number">3</span>, <span class="string">'mips'</span>: <span class="number">5</span>, <span class="string">'mips64'</span>: <span class="number">6</span>, <span class="string">'x86'</span>: <span class="number">8</span>, <span class="string">'x86_64'</span>: <span class="number">9</span>]</span><br><span class="line">   android.applicationVariants.all &#123; variant -&gt;</span><br><span class="line">     <span class="comment">// assign different version code for each output</span></span><br><span class="line">     variant.outputs.<span class="keyword">each</span> &#123; output -&gt;</span><br><span class="line">       output.versionCodeOverride =</span><br><span class="line">           <span class="keyword">project</span>.ext.versionCodes.get(output.getFilter(com.android.build.OutputFile.ABI), <span class="number">0</span>) * <span class="number">1000000</span> + android.defaultConfig.versionCode</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>转自： <a href="http://www.open-open.com/lib/view/open1440421271716.html" target="_blank" rel="external">http://www.open-open.com/lib/view/open1440421271716.html</a></p>
+]]></content>
+            </display>
+        </data>
+    </url>
+	
+	 
+	 <url>
         <loc>http://github.eagleweb.xyz/2015/12/08/hexo-%E8%8F%9C%E9%B9%B0%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E8%BD%AC%E8%BD%BD%E5%88%AB%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%88%B0%E8%87%AA%E5%B7%B1%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2/</loc>
         <priority>0.5</priority>
         <data>
