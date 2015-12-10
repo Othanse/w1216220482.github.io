@@ -4,6 +4,60 @@
 	 
 	 
 	 <url>
+        <loc>http://github.eagleweb.xyz/2015/12/10/%E8%BD%AC-%E5%85%B3%E4%BA%8EANT%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/</loc>
+        <priority>0.5</priority>
+        <data>
+            <display>
+                <title><![CDATA[[转]关于ANT的一些总结]]></title>
+                <content><![CDATA[<p>使用ant好久了，但是说实话基本对ANT立面的属性什么的都很不熟悉，其实就是个用，其余的啥也不知道。</p>
+<p>project、target、task等等的很多的属性其实都不知道是干什么用的，最近闲下来了需要好好研究研究这玩意也算是个技术储备。</p>
+<a id="more"></a>
+<p>ant 是apache 工程的一个子工程，是一个基于java的build工具。ant类似于make工具，但没有传统的make工具的缺点。</p>
+<p>传统的make往往只能限制在某一平台上使用，ant本身用java类实现，要构建的工程的配置文件用<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=xml%E6%A0%BC%E5%BC%8F" target="_blank" rel="external">xml格式</a>描述，可以很方便实现多平台编译,非常适合build大型工程。</p>
+<p>首先我们知道ant构建的形式是<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=xml" target="_blank" rel="external">xml</a>文件格式，一般的文件名称都是build.xml，</p>
+<h3 id="1-&lt;project&gt;标签">1.&lt;project&gt;标签</h3><p> peoject ：是构建文件的跟标签，</p>
+<p>&lt;project default=”main” basedir=”.” name=”ruyicai_android” &gt;—&gt;这个是我自己项目的project</p>
+<p>就如代码中所示，其各个属性的含义分别如下。&nbsp;<br>(1) default表示默认的运行目标，这个属性是必须的。&nbsp;<br>(2) basedir表示项目的基准目录。就是表示工程基路径，如果设置成”.”则表示build.xml文件的所在路径。<br>(3) name表示项目名。&nbsp;<br>(4)&nbsp;<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=description" target="_blank" rel="external">description</a>表示项目的描述。&nbsp;<br>每个构建文件都对应于一个项目，但是大型项目经常包含大量的子项目，每一个子项目都可以有&nbsp;<br>自己的构建文件。</p>
+<h3 id="2-&lt;target&gt;标签">2.&lt;target&gt;标签</h3><p>&lt;target name=”init”&gt;—&gt;这个是我自己项目的target</p>
+<p>一个项目标签下可以有一个或多个target标签。一个target标签可以依赖其他的target标签。例&nbsp;<br>如，有一个target用于<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F" target="_blank" rel="external">编译程序</a>，另一个target用于声称可执行文件。在生成可执行文件之前必&nbsp;<br>须先编译该文件，因策可执行文件的target依赖于编译程序的target。Target的所有属性如下。&nbsp;<br>(1).name表示标明，这个属性是必须的。&nbsp;<br>(2).<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=depends" target="_blank" rel="external">depends</a>表示依赖的目标。&nbsp;<br>(3)if表示仅当属性设置时才执行。&nbsp;<br>(4)unless表示当属性没有设置时才执行。&nbsp;<br>(5)description表示项目的描述。&nbsp;<br>Ant的depends属性指定了target的执行顺序。Ant会依照depends属性中target出现顺序依次执行&nbsp;<br>每个target。在执行之前，首先需要执行它所依赖的target。</p>
+<p>Z.B：</p>
+<p>&lt;target name=”run” depends=”complie”&gt;</p>
+<p>&lt;target name=”complie” depends=”prepare”&gt;</p>
+<p>&lt;target name=”prepare”&gt;</p>
+<p>程序中的名为run的target的&nbsp;<br>depends属性compile，而名为compile的target的depends属性是prepare，所以这几个target执&nbsp;<br>行的顺序是prepare-&gt;compile-&gt;run。&nbsp;<br>一个target只能被执行一次，即使有多个target依赖于它。如果没有if或unless属性，target总&nbsp;<br>会被执行。</p>
+<h3 id="3-&lt;mkdir&gt;标签">3.&lt;mkdir&gt;标签</h3><p>该标签用于创建一个目录，它有一个属性dir用来指定所创建的目录名，其代码如下：&nbsp;<br>&lt;mkdir dir=”out”/&gt;&nbsp;<br>通过以上代码就创建了一个目录，这个目录已经被前面的property标签所指定。</p>
+<h3 id="4&lt;jar&gt;标签">4&lt;jar&gt;标签</h3><p>该标签用来生成一个<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=JAR" target="_blank" rel="external">JAR</a>文件，其属性如下。&nbsp;<br>(1) destfile表示JAR文件名。&nbsp;<br>(2) basedir表示被归档的文件名。&nbsp;<br>(3)&nbsp;<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=include" target="_blank" rel="external">include</a>s表示别归档的<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=%E6%96%87%E4%BB%B6%E6%A8%A1%E5%BC%8F" target="_blank" rel="external">文件模式</a>。&nbsp;<br>(4) exchudes表示被排除的文件模式。</p>
+<h3 id="5．&lt;javac标签&gt;">5．&lt;javac标签&gt;</h3><p>该标签用于编译一个或一组java文件，其属性如下。&nbsp;<br>(1).srcdir表示<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=%E6%BA%90%E7%A8%8B%E5%BA%8F" target="_blank" rel="external">源程序</a>的目录。&nbsp;<br>(2).destdir表示<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=class%E6%96%87%E4%BB%B6" target="_blank" rel="external">class文件</a>的输出目录。&nbsp;<br>(3).include表示被编译的文件的模式。&nbsp;<br>(4).excludes表示被排除的文件的模式。&nbsp;<br>(5).<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=classpath" target="_blank" rel="external">classpath</a>表示所使用的类路径。&nbsp;<br>(6).<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=debug" target="_blank" rel="external">debug</a>表示包含的调试信息。&nbsp;<br>(7).optimize表示是否使用优化。&nbsp;<br>(8).verbose 表示提供详细的输出信息。&nbsp;<br>(9).fileonerror表示当碰到错误就自动停止。</p>
+<h3 id="6．&lt;java&gt;标签">6．&lt;java&gt;标签</h3><p>该标签用来执行编译生成的.class文件，其属性如下。&nbsp;<br>(1).classname 表示将执行的类名。&nbsp;<br>(2).jar表示包含该类的JAR文件名。&nbsp;<br>(3).classpath所表示用到的类路径。&nbsp;<br>(4).<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=fork" target="_blank" rel="external">fork</a>表示在一个新的<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=%E8%99%9A%E6%8B%9F%E6%9C%BA" target="_blank" rel="external">虚拟机</a>中运行该类。&nbsp;<br>(5).failonerror表示当出现错误时自动停止。&nbsp;<br>(6).output 表示输出文件。&nbsp;<br>(7).<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=append" target="_blank" rel="external">append</a>表示追加或者覆盖默认文件。</p>
+<h3 id="7-&lt;delete&gt;标签">7.&lt;delete&gt;标签</h3><p>该标签用于删除一个文件或一组文件，去属性如下。&nbsp;<br>(1)/file表示要删除的文件。&nbsp;<br>(2).dir表示要删除的目录。&nbsp;<br>(3).includeEmptyDirs 表示指定是否要删除空目录，默认值是删除。&nbsp;<br>(4).failonerror 表示指定当碰到错误是否停止，默认值是自动停止。&nbsp;<br>(5).verbose表示指定是否列出所删除的文件，默认值为不列出。</p>
+<h3 id="8-&lt;copy&gt;标签">8.&lt;copy&gt;标签</h3><p>该标签用于文件或文件集的拷贝，其属性如下。<br>(1).file 表示源文件。<br>(2).tofile 表示<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6" target="_blank" rel="external">目标文件</a>。<br>(3).todir 表示目标目录。&nbsp;<br>(4).overwrite 表示指定是否覆盖目标文件，默认值是不覆盖。&nbsp;<br>(5).includeEmptyDirs 表示制定是否拷贝空目录，默认值为拷贝。&nbsp;<br>(6).failonerror 表示指定如目标没有发现是否自动停止，默认值是停止。<br>(7).verbose 表示制定是否显示详细信息，默认值不显示。</p>
+<h3 id="9-&lt;exec&gt;执行文件：">9<strong>.&lt;exec&gt;执行文件</strong>：</h3><p>&lt;property name=”<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=aapt" target="_blank" rel="external">aapt</a>“ value=”E:\Android TOOL\android-sdk-windows\platform-tools\aapt.exe”/&gt;<font color="#ff0000" style="margin: 0px; padding: 0px;">&nbsp;<br></font>&lt;exec executable=”${aapt}” &gt;</p>
+<p>&lt;/exec&gt;</p>
+<h3 id="10-&lt;property&gt;标签：">10.&lt;property&gt;标签：</h3><p>property任务用来设置属性，一个工程可以设置很多属性，属性有名字和值，属性设置后可以在后面引用。<br>&lt;property name=”aapt” value=”E:\Android TOOL\android-sdk-windows\platform-tools\aapt.exe”/&gt;<font color="#ff0000" style="margin: 0px; padding: 0px;">&nbsp;<br></font></p>
+<p>设置一个名字为aapt，它的值是一个路径用value来设置这里写的是绝对路径（可以写相对路径但是还不会）。</p>
+<p>当然也可以使用location这个值来设定路径&nbsp;<br>&lt;property name=”aapt” location=”E:\Android TOOL\android-sdk-windows\platform-tools\aapt.exe”/&gt;</p>
+<p>在网上找的结果是value可以设定相对路径，但是在平台间必须转换“\”和”/”。</p>
+<p>使用location则不需要，但是必须是绝对路径。</p>
+<p>Ant的 location属性专门设计用于以平台无关的方式包含文件系统路径。所以应该用location来代&nbsp;<br>替value,此时用/或是\都会在不同的平台转换为正确的分隔符</p>
+<p>用我自己的项目中的代码来说明下：</p>
+<p>&lt;property name=”apk-name” value=”ruyicai” /&gt;这里的apk-name是我以后创建的文件夹的名称和生成的apk文件名的一部分，这样写是没有问题的在其他地方引用—&gt;${apk-name}就OK了。</p>
+<p>但是如果&lt;property name=”apk-name” location=”ruyicai” /&gt;会报出如下的错误。</p>
+<p>[echo] start initing …</p>
+<p>BUILD FAILED&nbsp;<br>E:\workspace\ruyicai_android_2.4\build.xml:30: Directory E:\workspace\ruyicai_android_2.4\build\E:\workspace\ruyicai_android_2.4\ruyicai creation was not successful for an unknown reason</p>
+<p>Total time: 0 seconds&nbsp;<br>这是我第三十行的&nbsp; &lt;mkdir dir=”build/${apk-name}” /&gt;</p>
+<p>明显如果使用location那么就会去寻找当前项目绝对路径下的ruyicai文件夹。</p>
+<p>那么就有一个问题这里为什么是这个路径？</p>
+<p>E:\workspace\ruyicai_android_2.4\</p>
+<p>很明显是根据project中的basedir的属性有关系，上面说过了如果basedir的属性是“.”表示build.xml的路径，而builid.xml的路径正好是E:\workspace\ruyicai_android_2.4\这个路径。</p>
+<p>OK先总结这些，总的来说ant没有那么难，但是也绝对不是那么简单需要下一番功夫的</p>
+<p>转自： <a href="http://www.fx114.net/qa-186-78040.aspx" target="_blank" rel="external">http://www.fx114.net/qa-186-78040.aspx</a></p>
+]]></content>
+            </display>
+        </data>
+    </url>
+	
+	 
+	 <url>
         <loc>http://github.eagleweb.xyz/2015/12/10/%E8%BD%AC-%E5%85%B3%E4%BA%8EAndroid%E6%89%93%E5%8C%85%E9%82%A3%E4%BA%9B%E4%BA%8B/</loc>
         <priority>0.5</priority>
         <data>

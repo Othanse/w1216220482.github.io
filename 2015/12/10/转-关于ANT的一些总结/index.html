@@ -1,0 +1,614 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>[转]关于ANT的一些总结 | 菜鹰帅帅</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="菜鹰帅帅">
+    
+
+    
+    <meta name="description" content="关于ANT的一些总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[转]关于ANT的一些总结">
+<meta property="og:url" content="http://github.eagleweb.xyz/2015/12/10/转-关于ANT的一些总结/index.html">
+<meta property="og:site_name" content="菜鹰帅帅">
+<meta property="og:description" content="关于ANT的一些总结">
+<meta property="og:updated_time" content="2015-12-10T15:53:06.774Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[转]关于ANT的一些总结">
+<meta name="twitter:description" content="关于ANT的一些总结">
+
+   
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/20151129204126.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/20151129204126.png">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/FB9A5DC73F8239C2664D22AB75997D5D.jpg" alt="菜鹰帅帅" title="菜鹰帅帅"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="菜鹰帅帅">菜鹰帅帅</a></h1>
+				<h2 class="blog-motto">————— 游戏 才刚刚开始！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">时光轴</a></li>
+					
+						<li><a href="/categories">分类</a></li>
+					
+						<li><a href="/tags">标签</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" autocomplete="off" name="q" maxlength="20" placeholder="搜索" />
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/12/10/转-关于ANT的一些总结/" title="[转]关于ANT的一些总结" itemprop="url">[转]关于ANT的一些总结</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="菜鹰帅帅" target="_blank" itemprop="author">菜鹰帅帅</a>
+		
+  <p class="article-time">
+    <time datetime="2015-12-10T15:43:40.000Z" itemprop="datePublished"> 发表于 2015-12-10</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-<project>标签"><span class="toc-number">1.</span> <span class="toc-text">1.<project>标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-<target>标签"><span class="toc-number">2.</span> <span class="toc-text">2.<target>标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-<mkdir>标签"><span class="toc-number">3.</span> <span class="toc-text">3.<mkdir>标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4<jar>标签"><span class="toc-number">4.</span> <span class="toc-text">4<jar>标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5．<javac标签>"><span class="toc-number">5.</span> <span class="toc-text">5．<javac标签></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6．<java>标签"><span class="toc-number">6.</span> <span class="toc-text">6．<java>标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-<delete>标签"><span class="toc-number">7.</span> <span class="toc-text">7.<delete>标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-<copy>标签"><span class="toc-number">8.</span> <span class="toc-text">8.<copy>标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-<exec>执行文件："><span class="toc-number">9.</span> <span class="toc-text">9.<exec>执行文件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-<property>标签："><span class="toc-number">10.</span> <span class="toc-text">10.<property>标签：</span></a></li></ol>
+		
+		</div>
+		
+		<p>使用ant好久了，但是说实话基本对ANT立面的属性什么的都很不熟悉，其实就是个用，其余的啥也不知道。</p>
+<p>project、target、task等等的很多的属性其实都不知道是干什么用的，最近闲下来了需要好好研究研究这玩意也算是个技术储备。</p>
+<a id="more"></a>
+<p>ant 是apache 工程的一个子工程，是一个基于java的build工具。ant类似于make工具，但没有传统的make工具的缺点。</p>
+<p>传统的make往往只能限制在某一平台上使用，ant本身用java类实现，要构建的工程的配置文件用<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=xml%E6%A0%BC%E5%BC%8F" target="_blank" rel="external">xml格式</a>描述，可以很方便实现多平台编译,非常适合build大型工程。</p>
+<p>首先我们知道ant构建的形式是<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=xml" target="_blank" rel="external">xml</a>文件格式，一般的文件名称都是build.xml，</p>
+<h3 id="1-&lt;project&gt;标签">1.&lt;project&gt;标签</h3><p> peoject ：是构建文件的跟标签，</p>
+<p>&lt;project default=”main” basedir=”.” name=”ruyicai_android” &gt;—&gt;这个是我自己项目的project</p>
+<p>就如代码中所示，其各个属性的含义分别如下。&nbsp;<br>(1) default表示默认的运行目标，这个属性是必须的。&nbsp;<br>(2) basedir表示项目的基准目录。就是表示工程基路径，如果设置成”.”则表示build.xml文件的所在路径。<br>(3) name表示项目名。&nbsp;<br>(4)&nbsp;<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=description" target="_blank" rel="external">description</a>表示项目的描述。&nbsp;<br>每个构建文件都对应于一个项目，但是大型项目经常包含大量的子项目，每一个子项目都可以有&nbsp;<br>自己的构建文件。</p>
+<h3 id="2-&lt;target&gt;标签">2.&lt;target&gt;标签</h3><p>&lt;target name=”init”&gt;—&gt;这个是我自己项目的target</p>
+<p>一个项目标签下可以有一个或多个target标签。一个target标签可以依赖其他的target标签。例&nbsp;<br>如，有一个target用于<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F" target="_blank" rel="external">编译程序</a>，另一个target用于声称可执行文件。在生成可执行文件之前必&nbsp;<br>须先编译该文件，因策可执行文件的target依赖于编译程序的target。Target的所有属性如下。&nbsp;<br>(1).name表示标明，这个属性是必须的。&nbsp;<br>(2).<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=depends" target="_blank" rel="external">depends</a>表示依赖的目标。&nbsp;<br>(3)if表示仅当属性设置时才执行。&nbsp;<br>(4)unless表示当属性没有设置时才执行。&nbsp;<br>(5)description表示项目的描述。&nbsp;<br>Ant的depends属性指定了target的执行顺序。Ant会依照depends属性中target出现顺序依次执行&nbsp;<br>每个target。在执行之前，首先需要执行它所依赖的target。</p>
+<p>Z.B：</p>
+<p>&lt;target name=”run” depends=”complie”&gt;</p>
+<p>&lt;target name=”complie” depends=”prepare”&gt;</p>
+<p>&lt;target name=”prepare”&gt;</p>
+<p>程序中的名为run的target的&nbsp;<br>depends属性compile，而名为compile的target的depends属性是prepare，所以这几个target执&nbsp;<br>行的顺序是prepare-&gt;compile-&gt;run。&nbsp;<br>一个target只能被执行一次，即使有多个target依赖于它。如果没有if或unless属性，target总&nbsp;<br>会被执行。</p>
+<h3 id="3-&lt;mkdir&gt;标签">3.&lt;mkdir&gt;标签</h3><p>该标签用于创建一个目录，它有一个属性dir用来指定所创建的目录名，其代码如下：&nbsp;<br>&lt;mkdir dir=”out”/&gt;&nbsp;<br>通过以上代码就创建了一个目录，这个目录已经被前面的property标签所指定。</p>
+<h3 id="4&lt;jar&gt;标签">4&lt;jar&gt;标签</h3><p>该标签用来生成一个<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=JAR" target="_blank" rel="external">JAR</a>文件，其属性如下。&nbsp;<br>(1) destfile表示JAR文件名。&nbsp;<br>(2) basedir表示被归档的文件名。&nbsp;<br>(3)&nbsp;<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=include" target="_blank" rel="external">include</a>s表示别归档的<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=%E6%96%87%E4%BB%B6%E6%A8%A1%E5%BC%8F" target="_blank" rel="external">文件模式</a>。&nbsp;<br>(4) exchudes表示被排除的文件模式。</p>
+<h3 id="5．&lt;javac标签&gt;">5．&lt;javac标签&gt;</h3><p>该标签用于编译一个或一组java文件，其属性如下。&nbsp;<br>(1).srcdir表示<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=%E6%BA%90%E7%A8%8B%E5%BA%8F" target="_blank" rel="external">源程序</a>的目录。&nbsp;<br>(2).destdir表示<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=class%E6%96%87%E4%BB%B6" target="_blank" rel="external">class文件</a>的输出目录。&nbsp;<br>(3).include表示被编译的文件的模式。&nbsp;<br>(4).excludes表示被排除的文件的模式。&nbsp;<br>(5).<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=classpath" target="_blank" rel="external">classpath</a>表示所使用的类路径。&nbsp;<br>(6).<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=debug" target="_blank" rel="external">debug</a>表示包含的调试信息。&nbsp;<br>(7).optimize表示是否使用优化。&nbsp;<br>(8).verbose 表示提供详细的输出信息。&nbsp;<br>(9).fileonerror表示当碰到错误就自动停止。</p>
+<h3 id="6．&lt;java&gt;标签">6．&lt;java&gt;标签</h3><p>该标签用来执行编译生成的.class文件，其属性如下。&nbsp;<br>(1).classname 表示将执行的类名。&nbsp;<br>(2).jar表示包含该类的JAR文件名。&nbsp;<br>(3).classpath所表示用到的类路径。&nbsp;<br>(4).<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=fork" target="_blank" rel="external">fork</a>表示在一个新的<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=%E8%99%9A%E6%8B%9F%E6%9C%BA" target="_blank" rel="external">虚拟机</a>中运行该类。&nbsp;<br>(5).failonerror表示当出现错误时自动停止。&nbsp;<br>(6).output 表示输出文件。&nbsp;<br>(7).<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=append" target="_blank" rel="external">append</a>表示追加或者覆盖默认文件。</p>
+<h3 id="7-&lt;delete&gt;标签">7.&lt;delete&gt;标签</h3><p>该标签用于删除一个文件或一组文件，去属性如下。&nbsp;<br>(1)/file表示要删除的文件。&nbsp;<br>(2).dir表示要删除的目录。&nbsp;<br>(3).includeEmptyDirs 表示指定是否要删除空目录，默认值是删除。&nbsp;<br>(4).failonerror 表示指定当碰到错误是否停止，默认值是自动停止。&nbsp;<br>(5).verbose表示指定是否列出所删除的文件，默认值为不列出。</p>
+<h3 id="8-&lt;copy&gt;标签">8.&lt;copy&gt;标签</h3><p>该标签用于文件或文件集的拷贝，其属性如下。<br>(1).file 表示源文件。<br>(2).tofile 表示<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6" target="_blank" rel="external">目标文件</a>。<br>(3).todir 表示目标目录。&nbsp;<br>(4).overwrite 表示指定是否覆盖目标文件，默认值是不覆盖。&nbsp;<br>(5).includeEmptyDirs 表示制定是否拷贝空目录，默认值为拷贝。&nbsp;<br>(6).failonerror 表示指定如目标没有发现是否自动停止，默认值是停止。<br>(7).verbose 表示制定是否显示详细信息，默认值不显示。</p>
+<h3 id="9-&lt;exec&gt;执行文件：">9<strong>.&lt;exec&gt;执行文件</strong>：</h3><p>&lt;property name=”<a href="http://so.fx114.net/cse/search?s=5712359222851038195&amp;entry=1&amp;q=aapt" target="_blank" rel="external">aapt</a>“ value=”E:\Android TOOL\android-sdk-windows\platform-tools\aapt.exe”/&gt;<font color="#ff0000" style="margin: 0px; padding: 0px;">&nbsp;<br></font>&lt;exec executable=”${aapt}” &gt;</p>
+<p>&lt;/exec&gt;</p>
+<h3 id="10-&lt;property&gt;标签：">10.&lt;property&gt;标签：</h3><p>property任务用来设置属性，一个工程可以设置很多属性，属性有名字和值，属性设置后可以在后面引用。<br>&lt;property name=”aapt” value=”E:\Android TOOL\android-sdk-windows\platform-tools\aapt.exe”/&gt;<font color="#ff0000" style="margin: 0px; padding: 0px;">&nbsp;<br></font></p>
+<p>设置一个名字为aapt，它的值是一个路径用value来设置这里写的是绝对路径（可以写相对路径但是还不会）。</p>
+<p>当然也可以使用location这个值来设定路径&nbsp;<br>&lt;property name=”aapt” location=”E:\Android TOOL\android-sdk-windows\platform-tools\aapt.exe”/&gt;</p>
+<p>在网上找的结果是value可以设定相对路径，但是在平台间必须转换“\”和”/”。</p>
+<p>使用location则不需要，但是必须是绝对路径。</p>
+<p>Ant的 location属性专门设计用于以平台无关的方式包含文件系统路径。所以应该用location来代&nbsp;<br>替value,此时用/或是\都会在不同的平台转换为正确的分隔符</p>
+<p>用我自己的项目中的代码来说明下：</p>
+<p>&lt;property name=”apk-name” value=”ruyicai” /&gt;这里的apk-name是我以后创建的文件夹的名称和生成的apk文件名的一部分，这样写是没有问题的在其他地方引用—&gt;${apk-name}就OK了。</p>
+<p>但是如果&lt;property name=”apk-name” location=”ruyicai” /&gt;会报出如下的错误。</p>
+<p>[echo] start initing …</p>
+<p>BUILD FAILED&nbsp;<br>E:\workspace\ruyicai_android_2.4\build.xml:30: Directory E:\workspace\ruyicai_android_2.4\build\E:\workspace\ruyicai_android_2.4\ruyicai creation was not successful for an unknown reason</p>
+<p>Total time: 0 seconds&nbsp;<br>这是我第三十行的&nbsp; &lt;mkdir dir=”build/${apk-name}” /&gt;</p>
+<p>明显如果使用location那么就会去寻找当前项目绝对路径下的ruyicai文件夹。</p>
+<p>那么就有一个问题这里为什么是这个路径？</p>
+<p>E:\workspace\ruyicai_android_2.4\</p>
+<p>很明显是根据project中的basedir的属性有关系，上面说过了如果basedir的属性是“.”表示build.xml的路径，而builid.xml的路径正好是E:\workspace\ruyicai_android_2.4\这个路径。</p>
+<p>OK先总结这些，总的来说ant没有那么难，但是也绝对不是那么简单需要下一番功夫的</p>
+<p>转自： <a href="http://www.fx114.net/qa-186-78040.aspx" target="_blank" rel="external">http://www.fx114.net/qa-186-78040.aspx</a></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/android-ant/">android-ant</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/android/">android</a><a href="/tags/ant/">ant</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	<div class="share-jiathis">
+	  
+<div class="jiathis_style_24x24">
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_googleplus"></a>
+	<a class="jiathis_button_douban"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+    var jiathis_config={
+    data_track_clickback:true,
+    sm:"copy,renren,cqq",
+    pic:"",
+    summary:"",
+     ralateuid:{"tsina":"5116721380"},hideMore:false}
+    
+  </script> 
+<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
+2073371" charset="utf-8"></script>      
+
+	 </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/12/10/转-关于Android打包那些事/"  title="[转]关于Android打包那些事">
+ <strong>下一篇：</strong><br/> 
+ <span>[转]关于Android打包那些事
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/12/10/转-关于ANT的一些总结/" data-title="[转]关于ANT的一些总结" data-url="http://github.eagleweb.xyz/2015/12/10/转-关于ANT的一些总结/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-<project>标签"><span class="toc-number">1.</span> <span class="toc-text">1.<project>标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-<target>标签"><span class="toc-number">2.</span> <span class="toc-text">2.<target>标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-<mkdir>标签"><span class="toc-number">3.</span> <span class="toc-text">3.<mkdir>标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4<jar>标签"><span class="toc-number">4.</span> <span class="toc-text">4<jar>标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5．<javac标签>"><span class="toc-number">5.</span> <span class="toc-text">5．<javac标签></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6．<java>标签"><span class="toc-number">6.</span> <span class="toc-text">6．<java>标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-<delete>标签"><span class="toc-number">7.</span> <span class="toc-text">7.<delete>标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-<copy>标签"><span class="toc-number">8.</span> <span class="toc-text">8.<copy>标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-<exec>执行文件："><span class="toc-number">9.</span> <span class="toc-text">9.<exec>执行文件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-<property>标签："><span class="toc-number">10.</span> <span class="toc-text">10.<property>标签：</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/android-ant/" title="android-ant">android-ant<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/android-docment/" title="android-docment">android-docment<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/android-new-version/" title="android-new_version">android-new_version<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/android-studio/" title="android-studio">android-studio<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/hexo/" title="hexo">hexo<sup>3</sup></a></li>
+		  
+		
+		  
+		
+		</ul>
+</div>
+
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://wdbaoge.com/" target="_blank" title="无敌小包哥">无敌小包哥</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.xiaoduanguoguo.com" target="_blank" title="小段果果">小段果果</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/android/" title="android">android<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Android/" title="Android">Android<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/转载/" title="转载">转载<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/so/" title="so">so<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/打包/" title="打包">打包<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Gradle/" title="Gradle">Gradle<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Android-Studio/" title="Android Studio">Android Studio<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/android-studio/" title="android studio">android studio<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/文章/" title="文章">文章<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/菜鹰/" title="菜鹰">菜鹰<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/乱码/" title="乱码">乱码<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/【6-0】/" title="【6.0】">【6.0】<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/API变化/" title="API变化">API变化<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ant/" title="ant">ant<sup>1</sup></a></li>
+			
+		
+			
+		
+		</ul>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=0&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=0&isFans=0&uid=5116721380&verifier=a8938224&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m 菜鹰帅帅. <br/>
+			Welcome to my blog.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/5116721380" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/w1216220482" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		<a href="http://www.zhihu.com/people/eagle-94-3" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		
+		<a href="mailto:eaglewebemail@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		@ 
+		
+		<a href="/about" target="_blank" title="菜鹰帅帅">菜鹰帅帅</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+        getSize();
+        if (myWidth >= 1024) {
+          c.click();
+        }
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"eagleweb"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb5b49f26342804c6a9a001ccb8d4f095' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
